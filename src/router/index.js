@@ -18,8 +18,8 @@ Vue.filter('toCurrency', function (value) {
 })
 import { date } from 'quasar'
 Vue.filter('formatDate', function (value) {
-  let splitDate = value.split('-')
-  let endDate = new Date(splitDate[0], splitDate[1] - 1, splitDate[2])
+  let splitDate = value.date.split('-')
+  let endDate = new Date(splitDate[0], splitDate[1] - 1, splitDate[2].split(' ')[0])
   if (value) {
     return date.formatDate(endDate, 'DD/MM/YYYY')
   }
